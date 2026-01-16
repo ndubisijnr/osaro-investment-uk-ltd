@@ -1,0 +1,8 @@
+{
+  "name": "Osaro Investment UK LTD",
+  "description": "A premium real estate investment platform specializing in identification of high-yield UK property opportunities for a global clientele.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
