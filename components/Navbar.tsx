@@ -32,13 +32,16 @@ const Navbar: React.FC = () => {
     <nav className={`fixed w-full z-50 transition-all duration-500 ${isSolid ? 'bg-white/95 dark:bg-brand-green/95 backdrop-blur-md shadow-lg py-1.5' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex flex-col items-start group">
-            <span className={`font-display font-bold tracking-tighter transition-all duration-500 ${isSolid ? 'text-sm sm:text-base text-brand-green dark:text-white' : 'text-base sm:text-lg text-white'}`}>
-              OSARO <span className="text-primary italic">INVESTMENT</span>
-            </span>
-            <span className={`text-[5px] sm:text-[6px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${isSolid ? 'text-brand-green/40 dark:text-white/40' : 'text-white/60'}`}>
-              UK LTD. RC NO: 08453211
-            </span>
+          <Link to="/" className="flex flex-row gap-2 items-center justify-center group">
+            <img src="./LOGO.png" alt="OSARO Investment Logo" className="h-8 w-auto group-hover:opacity-80 transition-opacity duration-300" />
+            <div className="flex flex-col leading-tight">
+              <span className={`font-display font-bold tracking-tighter transition-all duration-500 ${isSolid ? 'text-sm sm:text-base text-brand-green dark:text-white' : 'text-base sm:text-lg text-white'}`}>
+                OSARO <span className="text-primary italic">INVESTMENT</span>
+              </span>
+              <span className={`text-[5px] sm:text-[6px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${isSolid ? 'text-brand-green/40 dark:text-white/40' : 'text-white/60'}`}>
+                UK LTD. RC NO: 08453211
+              </span>
+            </div>
           </Link>
 
           <div className="hidden md:flex space-x-10 items-center">
@@ -46,29 +49,27 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-[10px] lg:text-xs font-bold tracking-[0.2em] uppercase transition-colors hover:text-primary-dark ${
-                  isActive(link.path) 
-                    ? 'text-primary' 
+                className={`text-[10px] lg:text-xs font-bold tracking-[0.2em] uppercase transition-colors hover:text-primary-dark ${isActive(link.path)
+                    ? 'text-primary'
                     : (isSolid ? 'text-brand-green dark:text-gray-100' : 'text-white')
-                }`}
+                  }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Link 
-              to="/contact" 
-              className={`px-5 py-2 sm:px-7 sm:py-2.5 rounded-none text-[9px] font-bold uppercase tracking-widest transition-all shadow-xl shadow-primary/20 ${
-                isSolid 
-                  ? 'bg-brand-green text-white hover:bg-brand-green-light' 
+            <Link
+              to="/contact"
+              className={`px-5 py-2 sm:px-7 sm:py-2.5 rounded-none text-[9px] font-bold uppercase tracking-widest transition-all shadow-xl shadow-primary/20 ${isSolid
+                  ? 'bg-brand-green text-white hover:bg-brand-green-light'
                   : 'bg-primary text-white hover:bg-primary-dark'
-              }`}
+                }`}
             >
               Consultation
             </Link>
           </div>
 
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`${isSolid ? 'text-brand-green dark:text-white' : 'text-white'}`}
             >
@@ -88,15 +89,14 @@ const Navbar: React.FC = () => {
               key={link.name}
               to={link.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block text-lg font-display font-medium hover:text-primary transition-colors ${
-                isActive(link.path) ? 'text-primary' : 'text-brand-green dark:text-white'
-              }`}
+              className={`block text-lg font-display font-medium hover:text-primary transition-colors ${isActive(link.path) ? 'text-primary' : 'text-brand-green dark:text-white'
+                }`}
             >
               {link.name}
             </Link>
           ))}
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="block w-full bg-primary text-white text-center py-4 text-sm font-bold uppercase tracking-widest"
           >
